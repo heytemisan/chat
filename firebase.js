@@ -18,3 +18,4 @@ const db = app.firestore(); //access to the database
 const auth = app.auth(); //access to the authentication
 const provider = new firebase.auth.GoogleAuthProvider(); //access tp the provider
 
+export { db, auth, provider };

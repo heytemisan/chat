@@ -5,6 +5,13 @@ import ChatIcon from '@mui/icons-material/Chat';
 //reusable aspect of our app.
 
 function HeaderSection() {
+    const createChat = () => {
+        const input = prompt('Please enter an email address for the user you wish to chat with');
+        //secure input from validation errors
+        if (!input) return null;
+        //check if email is valid or email exist
+        
+    }
     return (
             <Header>
                 <UserAvater />
@@ -12,7 +19,7 @@ function HeaderSection() {
                     Terry Restuarant
                 </Text>
                 <IconsContainer>
-                    <FiberNewIcon style={{ color: 'white', cursor: 'pointer'}}/> 
+                    <FiberNewIcon onClick={createChat} style={{ color: 'white', cursor: 'pointer'}}/> 
                     <IconButton>
                         <ChatIcon style={{color:'white'}}/>
                     </IconButton>
