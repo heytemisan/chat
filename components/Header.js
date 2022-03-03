@@ -1,36 +1,34 @@
 import styled from 'styled-components'
 import { Avatar, IconButton } from "@material-ui/core";
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import FiberNewIcon from '@mui/icons-material/FiberNew';
 import ChatIcon from '@mui/icons-material/Chat';
 //reusable aspect of our app.
 
-function Sidebar() {
+function HeaderSection() {
     return (
-        <Container>
             <Header>
                 <UserAvater />
+                <Text>
+                    Terry Restuarant
+                </Text>
                 <IconsContainer>
+                    <FiberNewIcon style={{ color: 'white', cursor: 'pointer'}}/> 
                     <IconButton>
-                        <ChatIcon />
+                        <ChatIcon style={{color:'white'}}/>
                     </IconButton>
-                    <MoreVertIcon/>
                 </IconsContainer>
             </Header>
-        </Container>
     )
 }
 
-export default Sidebar;
+export default HeaderSection;
 
-const Container = styled.div``;
 const Header = styled.div`
     display:flex;
     position: sticky;
-    background: #155165;
+    background: #DB1E3D;
     z-index: 1;
     justify-content:space-between;
-    width:50%;
-    margin: auto;
     padding:10px;
     align-items: center;
     border-bottom:1px solid whitesmoke;
@@ -45,4 +43,10 @@ const UserAvater = styled(Avatar)`
 const IconsContainer = styled.div`
     display:flex;
     align-items:center;
+`;
+
+const Text = styled.h1`
+    color: white;
+    font-size: 2vw;
+    text-align:center;
 `;

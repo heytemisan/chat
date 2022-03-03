@@ -2,27 +2,17 @@ import styled from 'styled-components'
 import { Avatar, IconButton } from "@material-ui/core";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ChatIcon from '@mui/icons-material/Chat';
+import HeaderSection from '../components/Header'
 //reusable aspect of our app.
 
 function Chat() {
     return (
-        <Container>
-            <Header>
-                <UserAvater />
-                <IconsContainer>
-                    <IconButton>
-                        <ChatIcon style={{color:'white'}}/>
-                    </IconButton>
-                    <MoreVertIcon style={{ color: 'white', cursor: 'pointer'}}/>
-                </IconsContainer>
-            </Header>
-        </Container>
+            <HeaderSection/>
     )
 }
 
 export default Chat;
 
-const Container = styled.div``;
 const Header = styled.div`
     display:flex;
     position: sticky;

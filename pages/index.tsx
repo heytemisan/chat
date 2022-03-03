@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styled from 'styled-components'
+import HeaderSection from '../components/Header'
 import { Avatar, IconButton } from "@material-ui/core";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ChatIcon from '@mui/icons-material/Chat';
@@ -16,15 +17,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Container>
-            <Header>
-                <UserAvater />
-                <IconsContainer>
-                    <IconButton>
-                        <ChatIcon style={{color:'white'}}/>
-                    </IconButton>
-                    <MoreVertIcon style={{ color: 'white', cursor: 'pointer'}}/>
-                </IconsContainer>
-        </Header>
+        <HeaderSection/>
         <Search>
           <PersonSearchIcon style={{marginLeft:'14px'}}/>
           <SearchInput placeholder="search in search"/>
@@ -33,34 +26,15 @@ const Home: NextPage = () => {
     </div>
   )
 }
-
 export default Home
 
 const Container = styled.div`
     margin: auto;
     width:50%;
+    height:100vh;
+    border:1px solid #F3F3F3;
 `;
-const Header = styled.div`
-    display:flex;
-    position: sticky;
-    background: #DB1E3D;
-    z-index: 1;
-    justify-content:space-between;
-    padding:10px;
-    align-items: center;
-    border-bottom:1px solid whitesmoke;
-`;
-const UserAvater = styled(Avatar)`
-    background-color: rgb(39 39 42);
-    cursor:pointer;
-    :hover {
-        opacity: 0.8;
-    }
-`;
-const IconsContainer = styled.div`
-    display:flex;
-    align-items:center;
-`;
+
 const Search = styled.div`
     display: flex;
     align-items: center;
@@ -78,6 +52,6 @@ const SearchInput = styled.input`
     background:#F3F3F3;
     padding:10px;
     outline:none;
+    width:100%;
 `;
-
 
