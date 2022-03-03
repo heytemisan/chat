@@ -12,7 +12,7 @@ function Sidebar() {
                 <IconsContainer>
                     <IconButton>
                         <ChatIcon />
-                        </IconButton>
+                    </IconButton>
                     <MoreVertIcon/>
                 </IconsContainer>
             </Header>
@@ -23,6 +23,23 @@ function Sidebar() {
 export default Sidebar;
 
 const Container = styled.div``;
-const Header = styled.div``;
-const UserAvater = styled(Avatar)``;
-const IconsContainer = styled.div``;
+const Header = styled.div`
+    display:flex;
+    position: sticky;
+    background: #155165;
+    z-index: 1;
+    justify-content:space-between;
+    width:50%;
+    margin: auto;
+    padding:10px;
+    align-items: center;
+    border-bottom:1px solid whitesmoke;
+`;
+const UserAvater = styled(Avatar)`
+    background-color: rgb(39 39 42);
+    cursor:pointer;
+`;
+const IconsContainer = styled.div`
+    display:flex;
+    align-items:center;
+`;
