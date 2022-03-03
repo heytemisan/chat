@@ -1,6 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Sidebar from '../components/Sidebar'
+import styled from 'styled-components'
+import { Avatar, IconButton } from "@material-ui/core";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import ChatIcon from '@mui/icons-material/Chat';
+import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 
 const Home: NextPage = () => {
   return (
@@ -11,9 +15,69 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Sidebar/>
+      <Container>
+            <Header>
+                <UserAvater />
+                <IconsContainer>
+                    <IconButton>
+                        <ChatIcon style={{color:'white'}}/>
+                    </IconButton>
+                    <MoreVertIcon style={{ color: 'white', cursor: 'pointer'}}/>
+                </IconsContainer>
+        </Header>
+        <Search>
+          <PersonSearchIcon style={{marginLeft:'14px'}}/>
+          <SearchInput placeholder="search in search"/>
+        </Search>
+        </Container>
     </div>
   )
 }
 
 export default Home
+
+const Container = styled.div`
+    margin: auto;
+    width:50%;
+`;
+const Header = styled.div`
+    display:flex;
+    position: sticky;
+    background: #DB1E3D;
+    z-index: 1;
+    justify-content:space-between;
+    padding:10px;
+    align-items: center;
+    border-bottom:1px solid whitesmoke;
+`;
+const UserAvater = styled(Avatar)`
+    background-color: rgb(39 39 42);
+    cursor:pointer;
+    :hover {
+        opacity: 0.8;
+    }
+`;
+const IconsContainer = styled.div`
+    display:flex;
+    align-items:center;
+`;
+const Search = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 2px;
+    margin: auto;
+    justify-content: center;
+    background: #F3F3F3;
+    width: 50%;
+    margin-top: 29px;
+`;
+const SearchInput = styled.input`
+    outline-width:0;
+    border:none;
+    background:#F3F3F3;
+    padding:10px;
+    outline:none;
+`;
+
+

@@ -4,23 +4,23 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ChatIcon from '@mui/icons-material/Chat';
 //reusable aspect of our app.
 
-function Sidebar() {
+function Chat() {
     return (
         <Container>
             <Header>
                 <UserAvater />
                 <IconsContainer>
                     <IconButton>
-                        <ChatIcon />
+                        <ChatIcon style={{color:'white'}}/>
                     </IconButton>
-                    <MoreVertIcon/>
+                    <MoreVertIcon style={{ color: 'white', cursor: 'pointer'}}/>
                 </IconsContainer>
             </Header>
         </Container>
     )
 }
 
-export default Sidebar;
+export default Chat;
 
 const Container = styled.div``;
 const Header = styled.div`
@@ -45,4 +45,4 @@ const UserAvater = styled(Avatar)`
 const IconsContainer = styled.div`
     display:flex;
     align-items:center;
-`;
+`
