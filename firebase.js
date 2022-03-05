@@ -1,4 +1,8 @@
-import firebase from 'firebase';
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth'
+
+//modified firebase store ~ upgraded to version "firebase": "^9.4.0"
 
 const firebaseConfig = {
     apiKey: "AIzaSyBi1HrXNAtncuBLMzthLVd2BXjQPJ3M81I",
@@ -9,13 +13,11 @@ const firebaseConfig = {
     appId: "1:529148473204:web:bea5850106bf5e3b1d4621"
 };
 
-//reintialize database
-const app = !firebase.apps.length
-    ? firebase.initializeApp(firebaseConfig)
-    : firebase.app();
+//reintialize database ~ refactored firebase app
+const app = initializeApp(firebaseConfig);
 
-const db = app.firestore(); //access to the database
-const auth = app.auth(); //access to the authentication
-const provider = new firebase.auth.GoogleAuthProvider(); //access tp the provider
+const db = getFirestore(app);//access to the database
+const auth = getAuth(); //access to the authentication
+const provider = new GoogleAuthProvider(); //access tp the provider
 
 export { db, auth, provider };

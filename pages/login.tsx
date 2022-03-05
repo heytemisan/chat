@@ -8,6 +8,7 @@ function login() {
             <Head>
                 <title>Login</title>
             </Head>
+            hello
         </Container>
     )
 }
@@ -15,5 +16,5 @@ function login() {
 export default login;
 
 const Container = styled.div`
-    
+
 `

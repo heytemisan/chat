@@ -9,7 +9,8 @@ import Login from './login'
 function MyApp({ Component, pageProps }: AppProps) {
   const [user] = useAuthState(auth);
 
-  if(!user) return <Login />
+  if (!user) return <Login />;
+  
   return <Component {...pageProps} />
 }
 
