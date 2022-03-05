@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Avatar, IconButton } from "@material-ui/core";
 import FiberNewIcon from '@mui/icons-material/FiberNew';
 import ChatIcon from '@mui/icons-material/Chat';
+import * as EmailValidator from 'email-validator'
 //reusable aspect of our app.
 
 function HeaderSection() {
@@ -10,7 +11,11 @@ function HeaderSection() {
         //secure input from validation errors
         if (!input) return null;
         //check if email is valid or email exist
-        
+        if (EmailValidator.validate(input)) {
+            //we need to add the chat into the Db 'chats' collection
+            
+        }
+
     }
     return (
             <Header>
@@ -21,7 +26,7 @@ function HeaderSection() {
                 <IconsContainer>
                     <FiberNewIcon onClick={createChat} style={{ color: 'white', cursor: 'pointer'}}/> 
                     <IconButton>
-                        <ChatIcon style={{color:'white'}}/>
+                        <ChatIcon style={{color:'white'}} />
                     </IconButton>
                 </IconsContainer>
             </Header>

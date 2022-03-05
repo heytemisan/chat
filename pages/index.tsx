@@ -2,6 +2,9 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styled from 'styled-components'
 import HeaderSection from '../components/Header'
+import { Avatar, IconButton } from "@material-ui/core";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import ChatIcon from '@mui/icons-material/Chat';
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 
 const Home: NextPage = () => {
