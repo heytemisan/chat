@@ -13,9 +13,7 @@ function login() {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential?.accessToken;
             const user = result.user;
-        }).catch((error) => {
-            
-        });
+        }).catch(alert)
     }
 
     return (
