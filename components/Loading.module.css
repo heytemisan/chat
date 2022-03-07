@@ -1,0 +1,12 @@
+.loader {
+    display: grid;
+    place-items: center;
+    margin-top: 100px;
+}
+
+.imgContainer {
+    margin: 0 30px 30px 0;
+    width: 300px;
+    border-radius: 50%;
+    border: 3px solid #db1e3d;
+}

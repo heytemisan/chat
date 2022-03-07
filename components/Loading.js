@@ -1,29 +1,17 @@
 import LogoImg from '../img/talking.png'
 import Image from 'next/image'
-import styled from 'styled-components';
+import { Circle } from 'better-react-spinkit';
+import Classes from './Loading.module.css'
 
 function Loading() {
     return (
-        <Loader>
-            <AvatarContainer>
+        <div className={Classes.loader}>
+            <div className={Classes.imgContainer}>
                 <Image src={LogoImg} alt="logo" />
-            </AvatarContainer>
-        </Loader>
+            </div>
+            <Circle color="#DB1E3D" size={60}/>
+        </div>
     )
 }
 
 export default Loading;
-
-const Loader = styled.div`
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:auto;
-    margin-top:90px;
-    width:100%;
-`
-
-const AvatarContainer = styled.div`
-    margin-top:30px;
-    width:300px;
-`

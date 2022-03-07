@@ -3,7 +3,9 @@ import { Avatar, IconButton } from "@material-ui/core";
 import FiberNewIcon from '@mui/icons-material/FiberNew';
 import ChatIcon from '@mui/icons-material/Chat';
 import * as EmailValidator from 'email-validator'
+import {auth}from '../firebase.js'
 //reusable aspect of our app.
+
 
 function HeaderSection() {
     const createChat = () => {
@@ -16,10 +18,13 @@ function HeaderSection() {
             
         }
 
+
     }
     return (
             <Header>
-                <UserAvater />
+            <UserAvater onClick={() => {
+                confirm("log out")&&auth.signOut()
+            }}/>
                 <Text>
                     Terry Restuarant
                 </Text>
