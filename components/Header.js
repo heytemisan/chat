@@ -3,11 +3,16 @@ import { Avatar, IconButton } from "@material-ui/core";
 import FiberNewIcon from '@mui/icons-material/FiberNew';
 import ChatIcon from '@mui/icons-material/Chat';
 import * as EmailValidator from 'email-validator'
-import {auth}from '../firebase.js'
+import {auth, db}from '../firebase.js'
+import { addDoc, collection } from 'firebase/firestore';
+import { useAuthState } from 'react-firebase-hooks/auth';
 //reusable aspect of our app.
 
 
 function HeaderSection() {
+
+    const [user] = useAuthState(auth);
+
     const createChat = () => {
         const input = prompt('Please enter an email address for the user you wish to chat with');
         //secure input from validation errors
@@ -15,10 +20,13 @@ function HeaderSection() {
         //check if email is valid or email exist
         if (EmailValidator.validate(input)) {
             //we need to add the chat into the Db 'chats' collection
-            
+            const c = collection(db, 'chats');
+            addDoc( //addDoc auth generates an id for the user
+                c, {
+                    users: [user.email, input]
+            })
+            alert('new chat created!')
         }
-
-
     }
     return (
             <Header>
